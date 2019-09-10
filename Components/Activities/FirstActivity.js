@@ -59,6 +59,7 @@ const firstStyle = StyleSheet.create ({
 
   container : {
     flex : 1,
+    justifyContent : 'center',
   },
   boutonData : {
 

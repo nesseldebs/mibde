@@ -101,7 +101,7 @@ const TopNavigation = createMaterialTopTabNavigator ({
 });
 
 const BottomNavigation = createMaterialBottomTabNavigator({
-  Home : { screen : TopNavigation},
+  Home : { screen : TopNavigation },
   Topic : { screen : TopicNav },
   News : { screen : NewsNav },
 },{
@@ -125,6 +125,8 @@ const FirstActivityNav = createStackNavigator ({
   SignUp : { screen : SignUp },
   Adresse : { screen : Adresse },
   BottomNavigation :{ screen : BottomNavigation }
+}, {
+  headerMode : 'none',
 });
 
 export default createAppContainer (FirstActivityNav);

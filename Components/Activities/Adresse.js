@@ -12,6 +12,9 @@ import {
 
 import TextInputText from '../TextInputLogin.js'
 
+//<div>Icons made by <a href="https://www.flaticon.com/authors/picol" title="Picol">Picol</a> from <a href="https://www.flaticon.com/"
+//<div>Icons made by <a href="https://www.flaticon.com/authors/smashicons" title="Smashicons">Smashicons</a> from <a href="https://www.flaticon.com/"             title="Flaticon">www.flaticon.com</a></div>
+
 export default class Adresse extends React.Component {
 
 
@@ -35,7 +38,7 @@ export default class Adresse extends React.Component {
     return (
       <ScrollView contentContainerStyle = { signStyle.mainContainer }>
 
-            <View style = { { flex : 1 , alignItems: 'center'} }>
+            <View style = { { flex : 1 , alignItems: 'center' , justifyContent : 'center'} }>
               <TextInputText text = 'Adresse Mail'
                              hiddenText = 'Mail...'
                 />
@@ -58,15 +61,12 @@ export default class Adresse extends React.Component {
 const signStyle = StyleSheet.create ({
   mainContainer : {
     padding : 10,
-    justifyContent : 'center',
   },
   boutonStyle : {
 
     marginTop : 8,
     backgroundColor : '#8b2938',
     height : 40,
-    justifyContent : 'center',
-    alignItems : 'center'
   },
   boutonTextStyle : {
     fontSize : 22,

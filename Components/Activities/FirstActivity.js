@@ -3,6 +3,10 @@ import { StyleSheet , View , Image , TouchableOpacity , Text} from 'react-native
 
 export default class Fisrt extends React.Component {
 
+  passToSignup = () => {
+
+    this.props.navigation.navigate('SignUp');
+  }
 
   passToLogin = ()  => {
 
@@ -42,7 +46,7 @@ export default class Fisrt extends React.Component {
                   <Text style = { firstStyle.inBoutonStyle }>Log in</Text>
               </TouchableOpacity>
 
-              <TouchableOpacity style = { firstStyle.signUpStyle }>
+              <TouchableOpacity style = { firstStyle.signUpStyle } onPress = { () => this.passToSignup ()}>
                   <Text style = { firstStyle.inBoutonStyle }>Sign up</Text>
               </TouchableOpacity>
           </View>

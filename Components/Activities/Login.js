@@ -2,9 +2,10 @@ import React from 'react'
 import { View , StyleSheet , Text,  TouchableOpacity, TextInput , Image} from 'react-native'
 
 
+
 export default class Login extends React.Component {
 
-  nextNav = () => {
+  nextNav = () => {// On bind les datas
 
     this.props.navigation.navigate("BottomNavigation");
   }
@@ -15,6 +16,10 @@ export default class Login extends React.Component {
 
   constructor (props) {
     super (props)
+
+    this.state = {
+
+    }
   }
 
   render () {
@@ -35,6 +40,7 @@ export default class Login extends React.Component {
               <Text style = { loginStyle.labelStyle}>Pseudo</Text>
               <TextInput
                 placeholder = 'Pseudo ...'
+                style = { { borderWidth : 1 , paddingLeft : 7 } }
               />
             </View>
 
@@ -42,6 +48,7 @@ export default class Login extends React.Component {
               <Text style = { loginStyle.labelStyle} >Mot de Passe</Text>
               <TextInput
                 placeholder = 'Mot de passe...'
+                style = { { borderWidth : 1 , paddingLeft : 7 , marginBottom : 10} }
               />
             </View>
 
@@ -66,7 +73,7 @@ const loginStyle = StyleSheet.create({
   },
   logInStyle : {
     backgroundColor : '#8b2938',
-    height : 47,
+    height : 50,
     justifyContent : 'center',
     alignItems : 'center',
   },

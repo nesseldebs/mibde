@@ -18,6 +18,8 @@ import NewsInfo from '../Activities/News_Info.js'
 import ParamSnack from '../Activities/ParamSnack.js'
 import First from '../Activities/FirstActivity.js'
 import Login from '../Activities/Login.js'
+import SignUp from '../Activities/SignupOut.js'
+import Adresse from '../Activities/Adresse.js'
 
 const NewsNav = createStackNavigator ({
   News : {
@@ -120,6 +122,8 @@ const FirstActivityNav = createStackNavigator ({
             }
           },
   Login : { screen : Login },
+  SignUp : { screen : SignUp },
+  Adresse : { screen : Adresse },
   BottomNavigation :{ screen : BottomNavigation }
 });
 

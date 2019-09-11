@@ -20,6 +20,7 @@ import First from '../Activities/FirstActivity.js'
 import Login from '../Activities/Login.js'
 import SignUp from '../Activities/SignupOut.js'
 import Adresse from '../Activities/Adresse.js'
+import Post from '../Activities/PostNews.js'
 
 const NewsNav = createStackNavigator ({
   News : {
@@ -38,6 +39,15 @@ const NewsNav = createStackNavigator ({
       headerStyle :{
         backgroundColor : '#8b2938',
       }
+    }
+  },
+  Post : {
+    screen : Post,
+    navigationOptions : {
+      title : 'Send News',
+      headerStyle :{
+        backgroundColor : '#8b2938',
+      },
     }
   }
 },{
@@ -118,7 +128,7 @@ const BottomNavigation = createMaterialBottomTabNavigator({
 const FirstActivityNav = createStackNavigator ({
   First : { screen : First,
             navigationOptions : {
-               headerVisible: false,
+              headerVisible: false,
             }
           },
   Login : { screen : Login },

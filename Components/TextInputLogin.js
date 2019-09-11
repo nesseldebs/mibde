@@ -35,7 +35,7 @@ export default class TextinputLogin extends React.Component {
           <View style = { { borderWidth : 1,padding : 5 , marginBottom : 5 } }>
             <TextInput
               placeholder = { this.state.hiddenText }
-              onchangeText = { (text) => { this.state.callBackFunction (text) } }
+              onchangeText = { (text) => this.state.callBackFunction (text) }
               style = { { fontSize : 20  } }
             />
           </View>

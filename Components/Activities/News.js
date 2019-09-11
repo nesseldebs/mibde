@@ -24,7 +24,9 @@ export default class New extends React.Component {
                 borderRadius: 100/2,
                 backgroundColor: 'orange',
            }
-         }>
+         }
+         onPress = { () => this.props.navigation.navigate ("Post") }
+         >
               <Icon name="ios-add" type="ionicon" iconStyle={ {
 
                 color:"white",

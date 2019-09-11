@@ -15,6 +15,7 @@ import TextInputText from '../TextInputLogin.js'
 // TODO: continuer la fonction changeText qui modifie les state en fonction d'un entier
 export default class SignUp extends React.Component {
 
+  
 
   passToNext = () => {
 
@@ -22,47 +23,12 @@ export default class SignUp extends React.Component {
   }
 
   //FonctionAppeller à chaque changement de text --->
-  changeText = (text , champ) => {// On est pas obligé de Binder les données ici :)
-
-    // Text -> argument permettant de recuperer le text ecrit dans le champ qui appelle la fonction
-    // champ -> entier permettant de choisir quel state modifier
-
-    switch (champ) {
-
-      case 1 :// -> cas nom
-        this.setState ({
-          nom : text,
-        });
-
-        break;
-      default :
-        this.setState ({
-          prenom : text,
-        });
-        break;
-    }
-  }
 
   constructor (props) {
     super (props )
 
-    this.confirmationMdp = null;// Retient le champ Confirmation pour ensuite le verifier avec le champ mdp
-    this.motDePasse = null;
-
-    this.state = {
-
-      nom : null,
-      prenom : null,
-      adresse : null,
-      mdp : null,
-    }
-  }
-
-  componentDidMount () {
-
-    // Appeller pour re render le composant
-
-    // On maintient une ouverture vers la base de donnée
+    this.nom = null;
+    this.prenom = null;
   }
 
   render () {
@@ -80,11 +46,11 @@ export default class SignUp extends React.Component {
         <View style = { { flex : 1} }>
           <TextInputText text = 'Prénom'
                          hiddenText = 'Prénom...'
-                         callBackFunction = { () => this.changeText (text, 1)}
+                         callBackFunction = { (text) => { console.log('coucou'); } }
             />
             <TextInputText text = 'Nom'
                             hiddenText = 'Nom...'
-                            callBackFunction = { () => this.changeText (text, 2) }
+
               />
 
             <TouchableOpacity style = { signStyle.boutonStyle } onPress = { () => this.passToNext () }>

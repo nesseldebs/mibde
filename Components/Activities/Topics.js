@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View , FlatList , Dimensions , TouchableOpacity  , ActivityIndicator , TextInput} from 'react-native';
 
-import {Icon} from 'react-native-elements'
+import {IconButton} from 'react-native-paper'
 
 import CardTopic from "../Card_Topic.js"
 import firebase from '../../Data/FireBase.js'
@@ -85,7 +85,7 @@ export default class Topics extends React.Component {
           />
         <TouchableOpacity style = {topicsStyle.addBoutonStyle}
                           onPress = {() => {this.props.navigation.navigate ("SendCard" , { id : 1 , sentence : 'coucou'})}}>
-            <Icon name="ios-add" type="ionicon" iconStyle={topicsStyle.icon}/>
+            <IconButton icon="camera"  style={topicsStyle.icon}/>
 
         </TouchableOpacity>
       </View>

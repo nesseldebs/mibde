@@ -4,14 +4,12 @@ import {
          Text ,
          StyleSheet ,
          Image  ,
-         TextInput ,
          TouchableOpacity,
          ScrollView
 
        } from 'react-native'
 
-import TextInputText from '../TextInputLogin.js'
-
+import {TextInput} from 'react-native-paper'
 //<div>Icons made by <a href="https://www.flaticon.com/authors/picol" title="Picol">Picol</a> from <a href="https://www.flaticon.com/"
 //<div>Icons made by <a href="https://www.flaticon.com/authors/smashicons" title="Smashicons">Smashicons</a> from <a href="https://www.flaticon.com/"             title="Flaticon">www.flaticon.com</a></div>
 
@@ -39,18 +37,15 @@ export default class Adresse extends React.Component {
       <ScrollView contentContainerStyle = { signStyle.mainContainer }>
 
             <View style = { { flex : 1 , alignItems: 'center' , justifyContent : 'center'} }>
-              <TextInputText text = 'Adresse Mail'
-                             hiddenText = 'Mail...'
+              <TextInput label='Adresse mail' mode="outlined"
                 />
-                <TextInputText text = 'Mot de passe'
-                                hiddenText = 'Mot de passe...'
+                <TextInput label='Mot de passe' mode="outlined"
                   />
-                  <TextInputText text = 'Confirmation'
-                                  hiddenText = 'Confirmation'
+                  <TextInput label='Confirmation' mode="outlined"
                     />
 
                 <TouchableOpacity style = { signStyle.boutonStyle } onPress = { () => this.connect() }>
-                  <Text style = { signStyle.boutonTextStyle }>étape suivante</Text>
+                  <Text style = { signStyle.boutonTextStyle }>Next</Text>
                 </TouchableOpacity>
             </View>
       </ScrollView>
@@ -60,7 +55,7 @@ export default class Adresse extends React.Component {
 
 const signStyle = StyleSheet.create ({
   mainContainer : {
-    padding : 10,
+  flex:1  ,
   },
   boutonStyle : {
 

@@ -1,5 +1,5 @@
 import React from 'react'
-import { StyleSheet , View , Image , TouchableOpacity , Text} from 'react-native'
+import { StyleSheet , View , Image , TouchableOpacity , Text, SafeAreaView} from 'react-native'
 
 export default class Fisrt extends React.Component {
 
@@ -33,7 +33,7 @@ export default class Fisrt extends React.Component {
   render ()  {
 
     return (
-      <View style = { firstStyle.container }>
+      <SafeAreaView style = { firstStyle.container }>
           <View style = { { justifyContent : 'center' , alignItems : 'center' } }>
             <Image
               source = { require ('../../assets/logo_mibde.png') }
@@ -50,7 +50,7 @@ export default class Fisrt extends React.Component {
                   <Text style = { firstStyle.inBoutonStyle }>Sign up</Text>
               </TouchableOpacity>
           </View>
-      </View>
+      </SafeAreaView>
     )
   }
 }
@@ -73,6 +73,7 @@ const firstStyle = StyleSheet.create ({
     justifyContent : 'center',
     alignItems : 'center',
     marginBottom : 5,
+    borderRadius:20
   },
   signUpStyle : {
 
@@ -80,6 +81,7 @@ const firstStyle = StyleSheet.create ({
     justifyContent : 'center',
     alignItems : 'center',
     height : 44,
+    borderRadius:20
   },
   inBoutonStyle : {
 

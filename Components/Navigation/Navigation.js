@@ -105,7 +105,7 @@ const TopNavigation = createMaterialTopTabNavigator ({
 },{
   tabBarOptions : {
     style : {
-      backgroundColor : '#8b2938',
+      backgroundColor : '#8b2938'
     }
   }
 });

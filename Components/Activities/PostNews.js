@@ -2,7 +2,7 @@ import React from 'react'
 import { View , TextInput , Text , StyleSheet , Image , Button , TouchableOpacity} from 'react-native'
 
 import firebase from '../../Data/FireBase.js'
-import ImagePicker from 'react-native-image-picker'
+//import ImagePicker from 'react-native-image-picker'
 
 export default class PosNews extends React.Component {
 
@@ -23,7 +23,7 @@ export default class PosNews extends React.Component {
     //stor.put (blob);
   }
 
-  openImagePicker = async () => {// Call when camera Icon is pressed
+  /*openImagePicker = async () => {// Call when camera Icon is pressed
 
     ImagePicker.showImagePicker ( {} , (response) => {
       if (response.didCancel) {
@@ -38,7 +38,7 @@ export default class PosNews extends React.Component {
       }
     })
 
-  }
+  }*/
 
   pushData = () => {// Call when sendnews button is pressed , send data to dataBase
 
@@ -143,7 +143,7 @@ export default class PosNews extends React.Component {
           </View>
           <TouchableOpacity
                 style = { { width : '100%' , alignItems : 'flex-end' } }
-                onPress = { () => this.openImagePicker() }
+              //  onPress = { () => this.openImagePicker() }
               >
             <Image
               source = { require ('../../assets/camera.png') }

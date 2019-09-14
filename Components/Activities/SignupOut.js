@@ -4,18 +4,17 @@ import {
          Text ,
          StyleSheet ,
          Image  ,
-         TextInput ,
          TouchableOpacity,
          ScrollView
 
        } from 'react-native'
 
-import TextInputText from '../TextInputLogin.js'
+       import {TextInput} from 'react-native-paper'
 
 // TODO: continuer la fonction changeText qui modifie les state en fonction d'un entier
 export default class SignUp extends React.Component {
 
-  
+
 
   passToNext = () => {
 
@@ -44,17 +43,18 @@ export default class SignUp extends React.Component {
         </View>
 
         <View style = { { flex : 1} }>
-          <TextInputText text = 'Prénom'
-                         hiddenText = 'Prénom...'
-                         callBackFunction = { (text) => { console.log('coucou'); } }
-            />
-            <TextInputText text = 'Nom'
-                            hiddenText = 'Nom...'
-
-              />
+          <TextInput
+              label = 'Nom'
+              callBackFunction = { (text) => { console.log('coucou'); } }
+              mode="outlined"
+          />
+          <TextInput
+              label = 'Prénom'
+              mode="outlined"
+          />
 
             <TouchableOpacity style = { signStyle.boutonStyle } onPress = { () => this.passToNext () }>
-              <Text style = { signStyle.boutonTextStyle }>étape suivante</Text>
+              <Text style = { signStyle.boutonTextStyle }>Next</Text>
             </TouchableOpacity>
         </View>
     </ScrollView>

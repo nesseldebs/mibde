@@ -1,6 +1,5 @@
 import React from 'react'
 import { View, Text, StyleSheet,Dimensions} from 'react-native'
-import {Icon} from "react-native-elements"
 
 export default class Commentaire extends React.Component {
 

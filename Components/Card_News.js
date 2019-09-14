@@ -1,6 +1,6 @@
 import React from 'react'
 import { View , Text , StyleSheet, Dimensions , Image, TouchableOpacity } from 'react-native'
-import {Icon} from "react-native-elements"
+import {IconButton} from "react-native-paper"
 
 class CardNews extends React.Component {
 
@@ -91,7 +91,7 @@ class CardNews extends React.Component {
               </View>
 
               <TouchableOpacity style={cardStyle.iconVue}>
-                <Icon name="ios-heart-empty" type="ionicon" color="#551A8B" />
+                <IconButton icon="camera" color="#551A8B" />
                 <Text style={cardStyle.like}>{this.state.nombreLike} Likes</Text>
                 <Text style={cardStyle.date}>le {this.state.dateDeMiseEnLigne}</Text>
               </TouchableOpacity>

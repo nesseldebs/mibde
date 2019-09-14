@@ -1,6 +1,6 @@
 import React from 'react'
 import { View, Text, TouchableOpacity, StyleSheet,Dimensions} from 'react-native'
-import {Icon} from "react-native-elements"
+import {IconButton} from "react-native-paper"
 
 class CardTopic extends React.Component {
 
@@ -67,7 +67,7 @@ class CardTopic extends React.Component {
           <View style={topicStyle.content}>
             <Text style={topicStyle.title}>{this.state.topicTitle}</Text>
             <Text style={topicStyle.info}>{this.state.name}</Text>
-            <Icon  iconStyle ={topicStyle.icon} name="ios-checkmark-circle-outline" type="ionicon" />
+            <IconButton  style ={topicStyle.icon} icon="camera" />
           </View>
 
           <View style={topicStyle.contentInfo}>
@@ -85,7 +85,7 @@ class CardTopic extends React.Component {
           <View style={topicStyle.content}>
             <Text style={topicStyle.title}>{this.state.topicTitle}</Text>
             <Text style={topicStyle.info}>{this.state.topicMembre}</Text>
-            <Icon  iconStyle ={topicStyle.icon} name="ios-checkmark-circle-outline" type="ionicon" />
+            <IconButton  style ={topicStyle.icon} name="camera" />
           </View>
 
           <View style={topicStyle.contentInfo}>

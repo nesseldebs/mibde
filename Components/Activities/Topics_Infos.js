@@ -2,7 +2,7 @@ import React from 'react'
 import { View , Text , StyleSheet , TouchableOpacity , FlatList , Dimensions } from 'react-native'
 import { createAppContainer , createStackNavigator } from 'react-navigation'
 
-import {Icon} from 'react-native-elements'
+import {IconButton} from 'react-native-paper'
 import firebase from '../../Data/FireBase.js'
 
 import CardTopic from '../Card_Topic.js'
@@ -162,7 +162,7 @@ export default class TopicInfo extends React.Component {
         </View>
 
         <TouchableOpacity style = { topicsInfoStyle.addBoutonStyle } onPress = { () => {this.props.navigation.navigate ('SendComment', { idToAnswer : this.state.idToLoad })}}>
-              <Icon name="ios-add" type="ionicon" iconStyle={topicsInfoStyle.icon}/>
+              <IconButton icon="camera"  style={topicsInfoStyle.icon}/>
         </TouchableOpacity>
       </View>
     );

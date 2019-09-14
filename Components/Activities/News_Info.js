@@ -1,6 +1,6 @@
 import React from 'react'
 import { View , ScrollView , StyleSheet , Image , Text , TouchableOpacity, Dimensions} from 'react-native'
-import {Icon} from "react-native-elements"
+import {IconButton} from "react-native-paper"
 
 export default class NewsInfo extends React.Component {
 
@@ -72,7 +72,7 @@ export default class NewsInfo extends React.Component {
 
         <View style = {newsInfoStyle.likeVue}>
           <TouchableOpacity>
-            <Icon name="ios-heart-empty" type="ionicon" color="#551A8B" />
+            <IconButton icon="camera" color="#551A8B" />
           </TouchableOpacity>
 
           <Text style={newsInfoStyle.likeVue}>{this.state.nombreLike} Likes</Text>

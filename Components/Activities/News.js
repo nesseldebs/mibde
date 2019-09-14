@@ -3,7 +3,7 @@ import { StyleSheet, Text, View , FlatList , ActivityIndicator , Image , TextInp
 
 import CardNews from '../Card_News.js'
 import NewsInfo from './News_Info.js'
-import {Icon} from 'react-native-elements'
+import {IconButton} from 'react-native-paper'
 
 import firebase from '../../Data/FireBase.js'
 
@@ -27,7 +27,7 @@ export default class New extends React.Component {
          }
          onPress = { () => this.props.navigation.navigate ("Post") }
          >
-              <Icon name="ios-add" type="ionicon" iconStyle={ {
+              <IconButton icon="camera" style={ {
 
                 color:"white",
                 elevation:2,

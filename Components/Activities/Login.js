@@ -1,6 +1,6 @@
 import React from 'react'
-import { View , StyleSheet , Text,  TouchableOpacity, TextInput , Image} from 'react-native'
-
+import { View , StyleSheet , Text,  TouchableOpacity,  Image,SafeAreaView} from 'react-native'
+import {TextInput } from 'react-native-paper'
 
 
 export default class Login extends React.Component {
@@ -25,7 +25,7 @@ export default class Login extends React.Component {
   render () {
 
     return(
-      <View style = { loginStyle.container }>
+      <SafeAreaView style = { loginStyle.container }>
 
         <View style = { { justifyContent : 'center' , alignItems : 'center' , marginBottom : 20 } }>
           <Image
@@ -37,18 +37,20 @@ export default class Login extends React.Component {
         <View style = { loginStyle.dataVue }>
 
             <View style = { loginStyle.inputTextWithText }>
-              <Text style = { loginStyle.labelStyle}>Pseudo</Text>
               <TextInput
-                placeholder = 'Pseudo ...'
-                style = { { borderWidth : 1 , paddingLeft : 7 } }
+                label='Pseudo'
+
+                mode="outlined"
+
               />
             </View>
 
             <View style = { loginStyle.inputTextWithText }>
-              <Text style = { loginStyle.labelStyle} >Mot de Passe</Text>
               <TextInput
-                placeholder = 'Mot de passe...'
-                style = { { borderWidth : 1 , paddingLeft : 7 , marginBottom : 10} }
+                label='Mot de passe'
+                
+                mode="outlined"
+
               />
             </View>
 
@@ -57,7 +59,7 @@ export default class Login extends React.Component {
             </TouchableOpacity>
 
         </View>
-      </View>
+      </SafeAreaView>
     );
   }
 }
@@ -76,6 +78,8 @@ const loginStyle = StyleSheet.create({
     height : 50,
     justifyContent : 'center',
     alignItems : 'center',
+    marginTop:10,
+    borderRadius:20
   },
   dataVue : {
     paddingLeft : 20,

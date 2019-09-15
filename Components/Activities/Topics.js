@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View , FlatList , Dimensions , TouchableOpacity  , ActivityIndicator , TextInput} from 'react-native';
 
-import {IconButton} from 'react-native-paper'
+import {IconButton, FAB} from 'react-native-paper'
 
 import CardTopic from "../Card_Topic.js"
 import firebase from '../../Data/FireBase.js'
@@ -83,11 +83,11 @@ export default class Topics extends React.Component {
             keyExtractor = {(item) => item.id.toString()}
             renderItem = {({item}) => <CardTopic item = {item} navigateToAnwser = { this.idToLoad } exposition = {false} />}
           />
-        <TouchableOpacity style = {topicsStyle.addBoutonStyle}
-                          onPress = {() => {this.props.navigation.navigate ("SendCard" , { id : 1 , sentence : 'coucou'})}}>
-            <IconButton icon="camera"  style={topicsStyle.icon}/>
-
-        </TouchableOpacity>
+        <FAB
+            onPress = {() => {this.props.navigation.navigate ("SendCard" , { id : 1 , sentence : 'coucou'})}}
+            icon="plus"
+            style={topicsStyle.icon}
+        />
       </View>
       );
     }
@@ -119,6 +119,13 @@ const topicsStyle = StyleSheet.create({
     elevation:2,
     fontSize:50,
     alignItems:"center",
-    justifyContent:"center"
+    justifyContent:"center",
+    position : 'absolute',
+    bottom : 10 ,
+    right :10,
+    width: 50,
+    height: 50,
+    borderRadius: 100/2,
+    backgroundColor: 'orange',
   }
 });

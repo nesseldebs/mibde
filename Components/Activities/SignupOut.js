@@ -68,12 +68,12 @@ const signStyle = StyleSheet.create ({
     padding : 10
   },
   boutonStyle : {
-
-    marginTop : 8,
     backgroundColor : '#8b2938',
-    height : 40,
+    height : 50,
     justifyContent : 'center',
-    alignItems : 'center'
+    alignItems : 'center',
+    marginTop:10,
+    borderRadius:20,
   },
   boutonTextStyle : {
     fontSize : 22,

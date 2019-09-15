@@ -1,9 +1,9 @@
 import React from 'react';
-import { StyleSheet, Text, View , ScrollView , Image , Button ,TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View , ScrollView , Image , TouchableOpacity } from 'react-native';
 
 import firebase from '../../Data/FireBase.js'
 import Modal from 'react-native-modal'
-
+import{Button} from 'react-native-paper'
 import DateTimePicker from "react-native-modal-datetime-picker";
 
 class Local extends React.Component {
@@ -28,21 +28,25 @@ class Local extends React.Component {
         style = { { paddingLeft : 10 , paddingRight : 10 } }
       >
 
-      <View style = { { backgroundColor : 'white' } }>
+      <View style = { { backgroundColor : 'white' , borderRadius:15} }>
         <View>
-          <Text style = { { fontWeight : 'bold' , fontSize : 27 } }>Voulez- vous fermer le BDE ?</Text>
+          <Text style = { { fontWeight : 'bold' , fontSize : 27, margin:5 } }>Voulez-vous fermer le BDE ?</Text>
         </View>
 
-        <View style = { { flexDirection : 'row' } }>
-          <TouchableOpacity onPress = {() => { this.fermerBde () }}>
-              <Text style = { { fontSize : 23 , color : 'red' } }>Oui</Text>
-          </TouchableOpacity>
+        <View style = { { flexDirection : 'row', alignSelf:'flex-end', margin:5 } }>
 
-          <TouchableOpacity onPress = { () => { this.setState ({
-            isModalVisible : false
-          }) } }>
-              <Text style = { { color : 'black' , fontSize : 20 } }>non</Text>
-          </TouchableOpacity>
+              <Button
+                onPress = { () => { this.setState ({ isModalVisible : false}) } }
+                style = { {marginBottom:5, fontSize : 20 } }
+                color='grey'
+              >Non</Button>
+
+              <Button
+                mode="outlined"
+                color = "red"
+                style = { { fontWeight : 'bold', fontSize : 25, marginBottom:5} }
+                onPress = {() => { this.fermerBde () }}
+              > Oui </Button>
 
         </View>
       </View>
@@ -158,21 +162,18 @@ renderButton (bool) {
 
     return (
       <Button
-        title =  'Fermer le bde'
-        color = '#8b2938'
+        color = "#8b2938"
         onPress = { () => this.setState ({
           isModalVisible : true,
         }) }
-      />
+      >Fermer le BDE</Button>
     );
   }else{
 
     console.log("Rendering ouvrir le bde");
     return (
-      <Button
-        title =  'ouvrir le bde'
-        color = '#8b2938'
-      />
+      <Button  color = "#8b2938"
+      >Ouvrir le BDE</Button>
     );
   }
 }

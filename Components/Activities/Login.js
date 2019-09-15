@@ -39,18 +39,14 @@ export default class Login extends React.Component {
             <View style = { loginStyle.inputTextWithText }>
               <TextInput
                 label='Pseudo'
-
                 mode="outlined"
-
               />
             </View>
 
             <View style = { loginStyle.inputTextWithText }>
               <TextInput
                 label='Mot de passe'
-                
                 mode="outlined"
-
               />
             </View>
 

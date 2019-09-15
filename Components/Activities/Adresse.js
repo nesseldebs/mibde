@@ -36,7 +36,7 @@ export default class Adresse extends React.Component {
     return (
       <ScrollView contentContainerStyle = { signStyle.mainContainer }>
 
-            <View style = { { flex : 1 , alignItems: 'center' , justifyContent : 'center'} }>
+            <View >
               <TextInput label='Adresse mail' mode="outlined"
                 />
                 <TextInput label='Mot de passe' mode="outlined"
@@ -56,16 +56,21 @@ export default class Adresse extends React.Component {
 const signStyle = StyleSheet.create ({
   mainContainer : {
   flex:1  ,
+  padding:10,
+
   },
   boutonStyle : {
-
-    marginTop : 8,
     backgroundColor : '#8b2938',
-    height : 40,
+    height : 50,
+    justifyContent : 'center',
+    alignItems : 'center',
+    marginTop:10,
+    borderRadius:20
   },
   boutonTextStyle : {
     fontSize : 22,
     fontWeight : 'bold',
     color : 'white',
+
   }
 });

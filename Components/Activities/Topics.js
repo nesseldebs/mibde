@@ -85,7 +85,7 @@ export default class Topics extends React.Component {
           />
         <FAB
             onPress = {() => {this.props.navigation.navigate ("SendCard" , { id : 1 , sentence : 'coucou'})}}
-            icon="plus"
+            icon="add"
             style={topicsStyle.icon}
         />
       </View>

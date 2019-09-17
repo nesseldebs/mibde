@@ -4,7 +4,7 @@ import { StyleSheet, Text, View , ScrollView , FlatList , ActivityIndicator , Im
 import firebase from '../../Data/FireBase.js'
 import NewsS from '../Shortcut/Card_News_s.js'
 import CardS from '../Shortcut/Card_Topics_S.js'
-
+import {Banner} from 'react-native-paper'
 class Rss extends React.Component {
 
   afficherBoutton (boolean)  {
@@ -104,6 +104,7 @@ class Rss extends React.Component {
       newsDataToUseNews : null,
       isFetchingNews : true,
       isFetchingTopics : true,
+      visible:true
     }
   }
 
@@ -112,6 +113,17 @@ class Rss extends React.Component {
     <ScrollView scrollEnabled= {true}>
 
       <View style = { { flex : 1  , paddingTop : 10,} }>
+        <Banner
+          visible={this.state.visible}
+          actions={ [
+              {
+                label: 'Masquer',
+                onPress: () => {this.setState({ visible: false })},
+
+              }
+            ]  }
+
+        >NE PAS OUBLIER : Soirée d'intégration le 19 septembre </Banner>
         <View style = {rssStyle.titreView}>
           <Text style = {rssStyle.titreStyle}>News</Text>
         </View>

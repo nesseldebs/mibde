@@ -25,10 +25,12 @@ export default class Adresse extends React.Component {
     super (props)
 
     this.state = {
+
       nom : null,
       prenom : null,
       adresse : null,
       motDePasse : null,
+      confirmation : null,
     }
   }
 
@@ -41,7 +43,12 @@ export default class Adresse extends React.Component {
                 />
                 <TextInput label='Mot de passe' mode="outlined"
                   />
-                  <TextInput label='Confirmation' mode="outlined"
+                  <TextInput label='Confirmation'
+                              mode="outlined"
+                              value = { this.state.confirmation }
+                              onChangeText = { (text) => { this.setState (
+                                confirmation : 
+                              )} }
                     />
 
                 <TouchableOpacity style = { signStyle.boutonStyle } onPress = { () => this.connect() }>

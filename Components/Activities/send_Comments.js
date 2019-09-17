@@ -1,7 +1,8 @@
 import React from 'react';
-import { StyleSheet, Text, View , TouchableOpacity , TextInput , Button} from 'react-native';
+import { StyleSheet, Text, View , TouchableOpacity , ImageBackground , Button} from 'react-native';
 
 import firebase from '../../Data/FireBase.js'
+import {TextInput} from 'react-native-paper'
 
 export default class SendComment extends React.Component {
 
@@ -65,6 +66,7 @@ export default class SendComment extends React.Component {
 
   render () {
      return (
+       <ImageBackground source={require('../../assets/fondecran.png')} style={{width: '100%', height: '100%'}}>
       <View style = { sendCommentStyle.mainVue }>
        <View style = {sendCommentStyle.titreView}>
          <Text style = {sendCommentStyle.titreStyle}>Topic</Text>
@@ -72,25 +74,26 @@ export default class SendComment extends React.Component {
 
        <View style = {sendCommentStyle.subView}>
 
-         <View style = {sendCommentStyle.subTitleView}>
-           <Text style = {sendCommentStyle.titreStyle} > Réponse </Text>
-         </View>
-
          <View style = {{borderBottomWidth : 1 , marginBottom : 10}}>
            <TextInput
-             placeholder ='écrire vote réponse ici ...'
+             label ='Ecrire votre réponse ici ...'
              style = {sendCommentStyle.textInputStyle}
+             selectionColor='white'
              onChangeText = { (text) => {this.textTosend = text}}
+             theme={{ colors: { placeholder: 'white', text: 'white', primary: 'black'}}}
+
            />
          </View>
          <View style = { { marginBottom : 20 } }>
            <Button
              title = 'Envoyer'
              onPress = {() => this.sendAnwer ()}
+             color='white'
            />
          </View>
        </View>
        </View>
+       </ImageBackground>
      );
   }
 }
@@ -104,17 +107,18 @@ const sendCommentStyle = StyleSheet.create({
   subView : {
 
     width : '85%',
-    backgroundColor : '#e6e8e8',
+  //  backgroundColor : '#e6e8e8',
     flexDirection : 'column',
     justifyContent : 'center',
     borderRadius : 3,
     paddingLeft : 20,
     paddingRight : 20,
+    marginTop:15
   },
   titreView : {
     width : '50%',
     height : 35,
-    backgroundColor : '#dae8e6',
+    //backgroundColor : '#dae8e6',
     justifyContent : 'center',
     alignItems : 'center',
     borderRadius : 3,
@@ -124,7 +128,7 @@ const sendCommentStyle = StyleSheet.create({
   },
   titreStyle : {
 
-    fontSize : 25,
+    fontSize : 30,
     fontWeight : 'bold',
   },
   subTitleView : {
@@ -134,5 +138,7 @@ const sendCommentStyle = StyleSheet.create({
   },
   textInputStyle : {
     paddingLeft : 3,
+    color:'white',
+    backgroundColor:'transparent'
   }
 });

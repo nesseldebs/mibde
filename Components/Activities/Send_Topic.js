@@ -1,9 +1,9 @@
 import React from 'react'
-import { View , TextInput , StyleSheet , Text , Button } from 'react-native'
+import { View ,  StyleSheet , Text , Button ,ImageBackground} from 'react-native'
 import {Icon} from "react-native-elements"
 
 import firebase from '../../Data/FireBase.js'
-
+import {TextInput} from 'react-native-paper'
 class SendTopic extends React.Component {
 
 
@@ -64,6 +64,7 @@ class SendTopic extends React.Component {
 
   render () {
     return (
+      <ImageBackground source={require('../../assets/fondecran.png')} style={{width: '100%', height: '100%'}}>
       <View style = {sendStyle.container}>
         <View style = {sendStyle.titreView}>
           <Text style = {sendStyle.titreStyle}>Topic</Text>
@@ -71,31 +72,32 @@ class SendTopic extends React.Component {
 
         <View style = {sendStyle.subView}>
 
-        <View style = {sendStyle.subTitleView} >
-          <Text style = {sendStyle.titreStyle} > Titre </Text>
-        </View>
+
         <View style = {{borderBottomWidth : 1 }}>
             <TextInput
-              placeholder ='Titre du Topic ...'
+              label ='Titre du Topic ...'
+              selectionColor='white'
               style = {sendStyle.textInputStyle}
               onChangeText = { (text) => {this.titreTextVar = text}}
+              theme={{ colors: { placeholder: 'white', text: 'white', primary: 'black'}}}
             />
         </View>
 
-          <View style = {sendStyle.subTitleView}>
-            <Text style = {sendStyle.titreStyle} > Question </Text>
-          </View>
+
 
           <View style = {{borderBottomWidth : 1 , marginBottom : 10}}>
             <TextInput
-              placeholder ='Ecrire la question du topic ...'
+              label ='Ecrire la question du topic ...'
+              selectionColor='white'
               style = {sendStyle.textInputStyle}
               onChangeText = { (text) => {this.questionTextVar = text}}
+              theme={{ colors: { placeholder: 'white', text: 'white', primary: 'black'}}}
             />
           </View>
           <View>
           <View style = { { marginBottom : 20 } }>
             <Button
+              color='white'
               title = 'Send Topics'
               onPress = {() => {this.sendTopic ()}}
             />
@@ -103,6 +105,7 @@ class SendTopic extends React.Component {
         </View>
         </View>
       </View>
+      </ImageBackground>
     );
   }
 }
@@ -117,18 +120,19 @@ const sendStyle =StyleSheet.create ({
     subView : {
 
       width : '85%',
-      backgroundColor : '#e6e8e8',
+    //  backgroundColor : '#e6e8e8',
       flexDirection : 'column',
       justifyContent : 'center',
       borderRadius : 3,
       elevation : 3,
       paddingLeft : 20,
       paddingRight : 20,
+      marginTop:15
     },
     titreView : {
       width : '50%',
       height : 35,
-      backgroundColor : '#dae8e6',
+      //backgroundColor : '#e6e8e8',
       justifyContent : 'center',
       alignItems : 'center',
       borderRadius : 3,
@@ -138,7 +142,7 @@ const sendStyle =StyleSheet.create ({
     },
     titreStyle : {
 
-      fontSize : 25,
+      fontSize : 30,
       fontWeight : 'bold',
     },
     subTitleView : {
@@ -148,6 +152,8 @@ const sendStyle =StyleSheet.create ({
     },
     textInputStyle : {
       paddingLeft : 3,
+      color:'white',
+      backgroundColor:'transparent'
     }
 });
 
